@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to signup_path unless !logged_in?
+    # redirect_to signup_path unless !logged_in?
   end
 
   def create

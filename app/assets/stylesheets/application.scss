@@ -14,7 +14,12 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
 
 // RESET
 *, 
@@ -71,33 +76,46 @@ $color-grey: #AEB0AF;
 .prim-title {
   text-transform: uppercase;
   font-family: 'Courgette', cursive;
-  font-size: 5.3rem;
+  font-size: 8rem;
+  display: inline-block;
+  width: 100%;
+  letter-spacing: 1px;
   @include center();
 }
 
 // BUTTONS
 
 .button {
-  color: $color-white-1;
-  border: none;
-  margin: 0 auto;
-  border-radius: 3px;
-  height: 12rem;
-  line-height: 12rem;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  display: block;
-  width: 90%;
+  &:link,
+  &:visited {
+    border: none;
+    margin: 0 auto;
+    border-radius: 3px;
+    height: 12rem;
+    line-height: 12rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    display: block;
+    width: 90%;
+  }
 
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
 .btn-blue {
-  background-color: $color-primary;
+  &:link,
+  &:visited {
+    color: $color-white-1;
+    background-color: $color-primary;
+  }
 }
 
 .btn-grey {
-  color: $color-grey;
+  &:link,
+  &:visited {
+    color: $color-grey;
+  }
 }
