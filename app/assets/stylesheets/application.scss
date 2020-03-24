@@ -14,12 +14,13 @@
  *= require_self
  */
 
-@import "bootstrap";
-$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/regular';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/brands';
+ @import "bootstrap";
+ 
+ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+ @import '@fortawesome/fontawesome-free/scss/fontawesome';
+ @import '@fortawesome/fontawesome-free/scss/regular';
+ @import '@fortawesome/fontawesome-free/scss/solid';
+ @import '@fortawesome/fontawesome-free/scss/brands';
 
 // RESET
 *, 
@@ -52,6 +53,10 @@ body {
 $color-white-1: #f1f3f2;
 $color-primary: #3778c2;
 $color-grey: #AEB0AF;
+$color-grey-2: #989DA3;
+$color-grey-3: #878A8F;
+$color-green: #60B524;
+$color-red: #F04546;
 
 // HOME
 
@@ -83,9 +88,88 @@ $color-grey: #AEB0AF;
   @include center();
 }
 
+// LOG IN
+
+.login {
+  background-color:  $color-white-1;
+  height: 100vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    background: $color-primary;
+    height: 12rem;
+    font-size: 3rem;
+    color: $color-white-1;
+    margin-bottom: 7rem;
+
+    & > a {
+      &,
+      &:link,
+      &:active {
+        font-size: 7rem;
+        width: 25%;
+        color: $color-white-1;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        text-decoration: none;
+      }
+    }
+
+    & > h2 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+    }
+
+    & > span {
+      font-size: 3rem;
+      text-transform: capitalize;
+      width: 25%;
+      text-align: end;
+    }
+  }
+
+  .form {
+    &__input {
+      &--username {
+        &,
+        &:focus {
+          display: block;
+          width: 100%;
+          height: 10rem;
+          font-size: 3rem;
+          padding: 3rem;
+          border: none;
+          outline: none;
+          font-weight: 100;
+          color: $color-grey-3;
+        }
+
+        &::-webkit-input-placeholder {
+          color: $color-grey-2;
+      }
+      }
+    }
+
+    &__input:nth-child(3) {
+      position: absolute;
+      bottom: 7rem;
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
 // BUTTONS
 
 .button {
+  &,
   &:link,
   &:visited {
     border: none;
@@ -106,6 +190,7 @@ $color-grey: #AEB0AF;
 }
 
 .btn-blue {
+  &,
   &:link,
   &:visited {
     color: $color-white-1;
@@ -114,8 +199,39 @@ $color-grey: #AEB0AF;
 }
 
 .btn-grey {
+  &,
   &:link,
   &:visited {
     color: $color-grey;
   }
+}
+
+
+// NOTIFICATIONS
+
+.notification {
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: $color-red;
+  color: $color-white-1;
+  width: 50%;
+  margin: 0 auto;
+  height: 6rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__message {
+    font-size: 2rem;
+    margin: 0;
+    line-height: 4rem;
+  }
+
 }

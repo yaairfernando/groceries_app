@@ -1,5 +1,23 @@
 <div class="login">
   <div class="login__header">
-    <i class="far fa-thumbs-up"></i>
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h2>Login</h2>
+    <span>Log in</span>
+  </div>
+
+  <%= render 'shared/messages' %>
+
+  <div class="form">
+    <%= simple_form_for(:session, url: login_path, html: { multipart: true, class: "form__body"}) do |f| %>
+      <div class="form__input">
+        <%= f.input :username, placeholder: 'Username', label: false, input_html: { class: 'form__input--username' } %>
+      </div>
+
+      <div class="form__input">
+        <%= f.submit "Log In", class: "button btn-blue" %>
+      </div>
+    <% end %>
   </div>
 </div>

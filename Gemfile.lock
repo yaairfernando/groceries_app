@@ -206,6 +206,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     shellany (0.0.1)
+    simple-line-icons-rails (0.1.6)
+      railties (>= 3.2, < 7)
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -268,6 +270,7 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
   selenium-webdriver
+  simple-line-icons-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
