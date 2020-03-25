@@ -12,7 +12,7 @@
   <div class="form">
     <%= simple_form_for(:session, url: login_path, html: { multipart: true, class: "form__body"}) do |f| %>
       <div class="form__input">
-        <%= f.input :username, placeholder: 'Username', label: false, input_html: { class: 'form__input--username' } %>
+        <%= f.input :username, placeholder: 'Username', label: false, input_html: { class: 'form__input--field' } %>
       </div>
 
       <div class="form__input">

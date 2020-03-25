@@ -4,4 +4,5 @@ class Group < ApplicationRecord
 
   validates :name, presence: true, length: {minimum:3, maximum:15}
   validates :icon, presence: true
+  mount_uploader :icon, IconUploader
 end

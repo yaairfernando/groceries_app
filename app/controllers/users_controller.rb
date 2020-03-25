@@ -20,6 +20,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def groups
+    @groups = Group.all.where('creator_id = ?', current_user.id).order('name ASC')
+  end
+
   private
 
   def find_user
