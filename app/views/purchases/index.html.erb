@@ -1,0 +1,29 @@
+<div class="purchase">
+  <%= render 'shared/menu', title: 'Transactions' %>
+  <div class="purchase__container">
+    <% @transactions.each do |t| %>
+      <div class="purchase__detail">
+        <div class="purchase__right">
+          <span>
+            <%= t.name %>
+          </span>
+          <span>
+            <%= t.created_at.strftime("%Y %B %d") %>
+          </span>
+
+          <div class="purchase__right__price">   
+            <span>
+              $ <%= t.amount %> .00
+            </span>
+          </div>
+        </div>
+        <%= link_to purchase_path(t), class: "purchase__image" do %>
+          <%= image_tag t.group.icon.url if t.group.icon? %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="purchase__button-container">
+    <%= link_to 'Register new Purchase', new_purchase_path, class: 'button btn-green purchase__create' %>
+  </div>
+</div>
