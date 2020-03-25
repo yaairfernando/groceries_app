@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:session][:username])
+    @user = User.find_by(name: params[:session][:username].downcase)
     if @user
       log_in @user
       flash.now[:success] = "Welcome back #{@user.name}..!!"
