@@ -16,8 +16,6 @@ class GroupsController < ApplicationController
     @value = Cloudinary::Uploader.upload(params[:group][:icon])
     @group.icon = @value['url']
     # @group.icon = @group.icon.url[0..-5]
-
-    byebug
     # create a new post object and save to db
     # @post = Post.new({:link => @value['secure_url'], :caption => params[:caption]})
     if @group.save
