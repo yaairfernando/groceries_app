@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  include GroupsHelper
   before_action :find_group, only: %i[show]
 
   def index
@@ -6,14 +7,19 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @group = current_user.groups.build
   end
 
   def create
     # byebug
-    @group = Group.new(group_params)
-    @group.creator_id = current_user.id
+    @group = current_user.groups.build(group_params)
+    @value = Cloudinary::Uploader.upload(params[:group][:icon])
+    @group.icon = @value['url']
+    # @group.icon = @group.icon.url[0..-5]
+    # create a new post object and save to db
+    # @post = Post.new({:link => @value['secure_url'], :caption => params[:caption]})
     if @group.save
+      # edit_icon @value
       flash[:success] = 'A new group has been added!!'
       redirect_to groups_path
     else
@@ -28,7 +34,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :creator_id)
   end
 
   def find_group

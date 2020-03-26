@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :user_params, only: %i[create]
 
   def new
+    redirect_to root_path unless !logged_in?
     @user = User.new
   end
 
@@ -10,8 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = "Hi #{@user.name}. Welcome to your Grocery Shopping Managment List"
-      redirect_to current_user
+      log_in @user
+      redirect_to root_path
     else
       render :new
     end

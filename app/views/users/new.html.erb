@@ -1,2 +1,15 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= javascript_pack_tag 'script' %>
+<div class="login">
+  <%= render 'shared/header_form', title: 'Sign Up', path: root_path %>
+  <div class="form">
+    <%= simple_form_for @user, validate: false, html: { multipart: true }  do |f| %>
+      <div class="form__input">
+        <%= f.input :name, placeholder: 'Username', label: false, input_html: { class: 'form__input--field' } %>
+      </div>
+
+      <div class="form__input">
+        <%= f.submit "Sign Up", class: "button btn-blue" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -59,7 +59,6 @@ a:active {
   bottom: 0;
   display: block;
   width: 100%;
-  background-color: $color-green;
   padding: 2rem 0;
 }
 
@@ -304,6 +303,15 @@ $color-black: #000;
       } 
     }
   }
+
+  &__button-container {
+    @include position_bottom();
+
+    & > a {
+      text-align: center;
+      border: 3px solid #fff !important;
+    }
+  }
 }
 
 // GROUPS
@@ -359,6 +367,7 @@ $color-black: #000;
 
   &__button-container {
     @include position_bottom();
+    background-color: $color-green;
   }
 }
 
@@ -443,6 +452,7 @@ $color-black: #000;
 
   &__button-container {
     @include position_bottom();
+    background-color: $color-green;
   }
 }
 

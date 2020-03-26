@@ -12,7 +12,8 @@
           </span>
         </div>
         <%= link_to group_path(g), class: "group__image" do %>
-          <%= image_tag g.icon.url if g.icon? %>
+          
+          <img src="<%= g.icon %>" alt="">
         <% end %>
       </div>
     <% end %>

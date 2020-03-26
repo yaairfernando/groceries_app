@@ -3,7 +3,11 @@
     <h1 class="prim-title">Groceries</h1>
   </div>
   <div class="home__actions">
-    <%= link_to 'Login', login_path, class: "button btn-blue" %>
-    <%= link_to 'Sign Up', signup_path, class: "button btn-grey" %>
+    <% if logged_in? %>
+      <%= link_to 'Dashboard', current_user, class: "button btn-blue" %>
+    <% else %>
+      <%= link_to 'Login', login_path, class: "button btn-blue" %>
+      <%= link_to 'Sign Up', signup_path, class: "button btn-grey" %>
+    <% end %>
   </div>
 </div>
