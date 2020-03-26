@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'script' %>
 <div class="purchase">
   <%= render 'shared/menu', title: 'Transactions' %>
   <div class="purchase__total">
@@ -8,6 +9,7 @@
       $ <%= @total %>.00
     </span>
   </div>
+  <%= render 'shared/messages' %>
   <div class="purchase__container">
     <%= render @purchases %>
   </div>

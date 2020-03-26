@@ -1,7 +1,7 @@
 <%= javascript_pack_tag 'script' %>
 <% if flash.any? %>
   <% flash.each do |name, msg| %>
-    <div class="notification">
+    <div class="notification <%= name %>">
       <div class="notification__icon">
         <i class="fas fa-exclamation-triangle"></i>
       </div>
