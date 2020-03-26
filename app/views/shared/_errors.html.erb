@@ -1,0 +1,13 @@
+<%= javascript_pack_tag 'script' %>
+<% if obj.errors.any? %>
+  <% obj.errors.full_messages.each do |msg| %>
+    <div class="notification">
+      <div class="notification__icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <p class="notification__message">
+        <%= msg %>
+      </p>
+    </div>
+  <% end %>
+<% end %>

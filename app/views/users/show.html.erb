@@ -1,0 +1,42 @@
+<div class="dashboard">
+  <div class="dashboard__picture">
+    <%= gravatar_for @user, size:50 %>
+    <h2><%= @user.name %></h2>
+  </div>
+
+  <ul class="dashboard__menu">
+    <li class="dashboard__menu__item">
+      <%= link_to purchases_path do %> 
+        <div class="circle">
+          <i class="fas fa-money-check-alt"></i>
+        </div>
+        <div class="link">
+          <span>All my transactions</span>
+        </div>
+      <% end %>
+    </li>
+    <li class="dashboard__menu__item">
+      <%= link_to external_transactions_path do %> 
+      <div class="circle">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="link">
+        <span>All my external transactions</span>
+      </div>
+      <% end %>
+    </li>
+    <li class="dashboard__menu__item">
+      <%= link_to groups_path do %> 
+      <div class="circle">
+        <i class="fas fa-layer-group"></i>
+
+      </div>
+      <div class="link">
+        <span>All groups</span>
+      </div>
+      <% end %>
+    </li>
+  </ul>
+
+  <%= link_to 'Sign Out', logout_path, class: "button btn-blue" %>
+</div>

@@ -1,0 +1,17 @@
+<div class="purchase">
+  <%= render 'shared/header_form', title: @group.name, path: groups_path, margin: 'mb-0' %>
+  <div class="purchase__total">
+    <span>
+      Total Amount:
+    </span>
+    <span>
+      $ <%= @total %>.00
+    </span>
+  </div>
+  <div class="purchase__container">
+    <%= render @group.purchases, author: true %>
+  </div>
+  <div class="purchase__button-container">
+    <%= link_to 'Register new Purchase', new_purchase_path, class: 'button btn-green purchase__create' %>
+  </div>
+</div>

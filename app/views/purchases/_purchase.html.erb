@@ -1,0 +1,24 @@
+<div class="purchase__detail">
+  <div class="purchase__right">
+    <span>
+      <%= purchase.name %>
+    </span>
+    <span>
+      <%= purchase.creator.name.titleize if local_assigns[:author] %>
+    </span>
+    <span>
+      <%= purchase.created_at.strftime("%Y %B %d") %>
+    </span>
+
+    <div class="purchase__right__price">   
+      <span>
+        $ <%= purchase.amount %> .00
+      </span>
+    </div>
+  </div>
+  <div class="purchase__image">
+    <%= image_tag purchase.group.icon.url if !purchase.group.nil? %>
+  </div>
+</div>
+
+

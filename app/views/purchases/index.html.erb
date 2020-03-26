@@ -1,0 +1,17 @@
+<div class="purchase">
+  <%= render 'shared/menu', title: 'Transactions' %>
+  <div class="purchase__total">
+    <span>
+      Total Amount:
+    </span>
+    <span>
+      $ <%= @total %>.00
+    </span>
+  </div>
+  <div class="purchase__container">
+    <%= render @purchases %>
+  </div>
+  <div class="purchase__button-container">
+    <%= link_to 'Register new Purchase', new_purchase_path, class: 'button btn-green purchase__create' %>
+  </div>
+</div>
