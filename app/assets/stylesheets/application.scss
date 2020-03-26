@@ -14,13 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
  
- $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
- @import '@fortawesome/fontawesome-free/scss/fontawesome';
- @import '@fortawesome/fontawesome-free/scss/regular';
- @import '@fortawesome/fontawesome-free/scss/solid';
- @import '@fortawesome/fontawesome-free/scss/brands';
 
 // RESET
 *, 
@@ -286,7 +281,7 @@ $color-black: #000;
           display: inline-block;
           border: 2px solid #fff;
 
-          & > i {
+          & > img {
             margin: 0 auto;
             text-align: center;
             @include center();
@@ -349,7 +344,7 @@ $color-black: #000;
     margin-left: 4rem;
 
     & > span:first-child {
-      font-size: 5rem;
+      font-size: 3.5rem;
     }
 
     & > span:last-child {
@@ -409,6 +404,7 @@ $color-black: #000;
     background: #fff;
     display: flex;
     margin: 0 auto;
+    padding: 3rem 1.5rem;
     border-radius: 3px;
     flex-direction: row-reverse;
     margin-bottom: 5rem;

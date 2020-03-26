@@ -3,7 +3,11 @@
   <% flash.each do |name, msg| %>
     <div class="notification <%= name %>">
       <div class="notification__icon">
-        <i class="fas fa-exclamation-triangle"></i>
+        <% if name == 'danger' %>
+          <%= image_tag 'alert.png' %>
+        <% else %>  
+          <%= image_tag 'ok.png' %>
+        <% end %>
       </div>
       <p class="notification__message">
         <%= msg %>
