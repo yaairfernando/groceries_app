@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :find_group, only: %i[show]
 
   def index
-
+    @groups = current_user.groups.includes(:purchases).order('name ASC')
   end
 
   def new
@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @total = @group.purchases.sum('amount')
   end
 
   private
@@ -31,6 +32,6 @@ class GroupsController < ApplicationController
   end
 
   def find_group
-    @gropu = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 end

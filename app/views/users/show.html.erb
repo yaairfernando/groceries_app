@@ -16,7 +16,7 @@
       <% end %>
     </li>
     <li class="dashboard__menu__item">
-      <%= link_to root_path do %> 
+      <%= link_to external_transactions_path do %> 
       <div class="circle">
         <i class="fas fa-chart-line"></i>
       </div>
@@ -37,4 +37,6 @@
       <% end %>
     </li>
   </ul>
+
+  <%= link_to 'Sign Out', logout_path, class: "button btn-blue" %>
 </div>

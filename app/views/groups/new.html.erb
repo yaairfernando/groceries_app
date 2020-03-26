@@ -1,13 +1,6 @@
 <%= javascript_pack_tag 'script' %>
 <div class="login">
-  <div class="login__header">
-    <%= link_to groups_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h2>Groups</h2>
-    <span>Groups</span>
-  </div>
-
+  <%= render 'shared/header_form', title: 'Groups', path: groups_path %>
   <div class="form">
     <%= simple_form_for @group, validate: false, html: { multipart: true }  do |f| %>
       <div class="form__input">

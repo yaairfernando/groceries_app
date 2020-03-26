@@ -1,12 +1,8 @@
 <%= javascript_pack_tag 'script' %>
 <div class="login">
-  <div class="login__header">
-    <%= link_to purchases_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h2>Transaction</h2>
-    <span>Transaction</span>
-  </div>
+  <%= render 'shared/header_form', title: 'Transaction', path: purchases_path %>
+
+  <%= render 'shared/errors', obj: @purchase %>
 
   <div class="form">
     <%= simple_form_for @purchase do |f| %>
@@ -19,7 +15,7 @@
       </div>
 
       <div class="form__input__select">
-        <%= f.input :group_id, :collection => Group.all, :value_method => :id, :label => "Select a Group" ,:include_blank => false %>
+        <%= f.input :group_id, :collection => Group.all, :value_method => :id, :label => "Select a Group" %>
       </div>
 
       <div class="form__input">

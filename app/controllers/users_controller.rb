@@ -24,6 +24,11 @@ class UsersController < ApplicationController
     @groups = Group.all.where('creator_id = ?', current_user.id).order('name ASC')
   end
 
+  def external_transactions
+    @transactions = current_user.purchases.includes(:group, :creator).where(group_id: [nil, '']).order('name ASC')
+    @total = current_user.purchases.where(group_id: [nil, '']).sum('amount')
+  end
+
   private
 
   def find_user

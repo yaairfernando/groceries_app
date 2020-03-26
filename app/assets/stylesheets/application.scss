@@ -28,7 +28,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-shadow: inherit;
+  box-sizing: inherit;
 }
 
 html {
@@ -40,12 +40,27 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+a:visited,
+a:focus,
+a:active {
+  outline: none;
+}
+
 // MIXINS
 @mixin center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin position_bottom {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background-color: $color-green;
+  padding: 2rem 0;
 }
 
 // COLORS
@@ -60,6 +75,7 @@ $color-grey-2: #989DA3;
 $color-grey-3: #878A8F;
 $color-green: #60B524;
 $color-red: #F04546;
+$color-black: #000;
 // HOME
 
 .home {
@@ -115,7 +131,6 @@ $color-red: #F04546;
         width: 25%;
         color: $color-white-1;
         display: flex;
-        justify-content: end;
         align-items: center;
         text-decoration: none;
       }
@@ -139,7 +154,8 @@ $color-red: #F04546;
 
   .form {
     &__input {
-      &--field {
+      &--field,
+      &--number {
         &,
         &:focus {
           display: block;
@@ -151,6 +167,7 @@ $color-red: #F04546;
           outline: none;
           font-weight: 100;
           color: $color-grey-3;
+          margin-bottom: 2rem;
         }
 
         &::-webkit-input-placeholder {
@@ -169,9 +186,36 @@ $color-red: #F04546;
       outline: none;
       font-weight: 100;
       color: $color-grey-3;
+    }
 
-      & > input::before {
-        
+    &__input__select {
+
+      .select {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        & > label {
+          display: flex;
+          flex-direction: initial;
+          font-size: 3rem;
+          color: $color-grey-3;
+          padding: 0 2rem;
+        }
+
+        & > select {
+          &,
+          &:focus,
+          &:active {
+            border: none;
+            outline: none;
+            padding: 3rem 3rem;
+            background: #fff;
+            color: $color-grey-3;
+            font-size: 3rem;
+            font-weight: 100;
+          }
+        }
       }
     }
 
@@ -220,7 +264,8 @@ $color-red: #F04546;
       padding: 1rem 0;
       margin: 0 auto;
       display: block;
-      width: 63rem;
+      width: 70rem;
+      margin-bottom: 7rem;
 
       & > a {
         &,
@@ -228,15 +273,16 @@ $color-red: #F04546;
         &:visited {
           color: #fff;
           text-decoration: none;
-          font-size: 4rem;
+          font-size: 4.4rem;
           display: flex;
           align-items: center;
+          outline: none;
         }
 
         .circle {
           border-radius: 50%;
-          height: 8rem;
-          width: 15%;
+          height: 15rem;
+          width: 20%;
           position: relative;
           display: inline-block;
           border: 2px solid #fff;
@@ -245,7 +291,7 @@ $color-red: #F04546;
             margin: 0 auto;
             text-align: center;
             @include center();
-            font-size: 3.7rem;
+            font-size: 5.7rem;
           }
         }
 
@@ -268,9 +314,12 @@ $color-red: #F04546;
   position: relative;
 
   &__container {
-    @include center();
+    position: absolute;
+    top: 48.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 82rem;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 281px);
     overflow-y: auto;
   }
 
@@ -289,6 +338,7 @@ $color-red: #F04546;
     flex-direction: column;
     justify-content: center;
     padding: 0 3rem;
+    margin-left: 4rem;
 
     & > span:first-child {
       font-size: 5rem;
@@ -300,7 +350,7 @@ $color-red: #F04546;
   }
 
   &__image {
-    width: 20rem;
+    width: 18rem;
 
     & > img {
       width: 100%;
@@ -308,15 +358,92 @@ $color-red: #F04546;
   }
 
   &__button-container {
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    background-color: $color-green;
-    padding: 2rem 0;
+    @include position_bottom();
+  }
+}
+
+// TRANSACTIONS
+
+.purchase {
+  height: 100vh;
+  background-color: $color-white-1;
+
+  &__total {
+    display: flex;
+    background: #fff;
+    height: 10rem;
+    text-align: center;
+    font-size: 3.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & > span:first-child {
+      color: $color-grey-3;
+    }
+
+    & > span::last-child {
+      color: $color-black;
+    }
   }
 
+  &__container {
+    padding: 2rem 3rem;
+    max-height: calc(100vh - 300px);
+    overflow-y: scroll;
+  }
 
+  &__detail {
+    width: 90%;
+    height: 22rem;
+    background: #fff;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 3px;
+    flex-direction: row-reverse;
+    margin-bottom: 5rem;
+    box-shadow: 0 1rem 1.6rem rgba($color-black,0.2);
+  }
+
+  &__right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    & > span:first-child {
+      font-size: 4.5rem;
+      color: #bebebe;
+    }
+
+    & > span:nth-child(2),
+    & > span:nth-child(3) {
+      font-size: 3rem;
+      color: #bebebe;
+    }
+
+    &__price {
+      position: absolute;
+      font-size: 3.2rem;
+      top: 4rem;
+      right: 4rem;
+      color: black;
+    }
+  }
+
+  &__image {
+    flex: 1;
+    margin: 2rem 3rem;
+
+    & > img {
+      width: 18.5rem;
+    }
+  }
+
+  &__button-container {
+    @include position_bottom();
+  }
 }
 
 // BUTTONS
@@ -348,6 +475,7 @@ $color-red: #F04546;
   &:visited {
     color: $color-white-1;
     background-color: $color-primary;
+    outline: none;
   }
 }
 
@@ -356,6 +484,7 @@ $color-red: #F04546;
   &:link,
   &:visited {
     color: $color-grey;
+    outline: none;
   }
 }
 
@@ -367,7 +496,8 @@ $color-red: #F04546;
     color: $color-white-1;
     bottom: 0;
     text-align: center;
-    border: 1px solid #fff;
+    border: 3px solid #fff;
+    outline: none;
   }
 }
 
