@@ -117,6 +117,7 @@ $color-black: #000;
     color: $color-white-1;
     margin-bottom: 7rem;
 
+    
     & > a {
       &,
       &:link,
@@ -129,7 +130,7 @@ $color-black: #000;
         text-decoration: none;
       }
     }
-
+    
     & > h2 {
       font-size: 4rem;
       text-transform: uppercase;
@@ -137,7 +138,7 @@ $color-black: #000;
       text-align: center;
       width: 50%;
     }
-
+    
     & > span {
       font-size: 3rem;
       text-transform: capitalize;
@@ -147,6 +148,12 @@ $color-black: #000;
   }
 
   .form {
+    height: calc(100vh - 190px);
+
+    & > form {
+      height: inherit;
+    }
+    
     &__input {
       &--field,
       &--number {
@@ -166,8 +173,9 @@ $color-black: #000;
 
         &::-webkit-input-placeholder {
           color: $color-grey-2;
+        }
       }
-      }
+
     }
 
     &__input__file {
