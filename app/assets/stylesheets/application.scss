@@ -149,11 +149,13 @@ $color-black: #000;
 
   .form {
     height: calc(100vh - 190px);
+    position: relative;
 
     & > form {
       height: inherit;
+      position: inherit;
     }
-    
+
     &__input {
       &--field,
       &--number {
@@ -223,7 +225,7 @@ $color-black: #000;
 
     &__input:last-child {
       position: absolute;
-      bottom: 7rem;
+      bottom: 0.5rem;
       display: block;
       width: 100%;
     }
@@ -235,11 +237,13 @@ $color-black: #000;
 .dashboard {
   height: 100vh;
   background-image: linear-gradient(to top, $color-blue-light, $color-blue-dark);
+  position: relative;
 
   &__picture {
     margin: 0 auto;
     text-align: center;
     padding: 6rem;
+    height: auto;
 
     & > img {
       border-radius: 100px;
@@ -260,6 +264,7 @@ $color-black: #000;
     margin: 0 auto;
     text-align: justify;
     padding: 2rem 3rem;
+    height: auto;
 
     &__item {
       list-style: none;
@@ -308,7 +313,11 @@ $color-black: #000;
   }
 
   &__button-container {
-    @include position_bottom();
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
 
     & > a {
       text-align: center;
