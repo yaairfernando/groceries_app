@@ -98,9 +98,6 @@ $color-black: #000;
   width: 100%;
   letter-spacing: 1px;
   @include center();
-  transition: all .4s;
-  animation: moveDown 1s ease-in;
-  // animation: moveInBottom 1s ease-out;
 }
 
 // LOG IN
@@ -527,36 +524,6 @@ $color-black: #000;
   }
 }
 
-// ANIMATIONS
-
-@keyframes moveDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-
-  80% {
-    transform: translateY(2px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-
-// @keyframes moveInBottom {
-//   0% {
-//     opacity: 0;
-//     transform: translateY(1rem);
-//   }
-
-//   100% {
-//     opacity: 1;
-//     transform: translate(0);
-//   }
-// }
 
 // NOTIFICATIONS
 
