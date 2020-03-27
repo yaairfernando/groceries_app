@@ -33,4 +33,16 @@ module Integration
     click_button 'Create'
     expect(page).to have_content('A new group has been added!!')
   end
+
+  def create_transaction
+    click_link 'Register new Purchase'
+    expect(find('form')).to be_present
+    expect(find('#group_icon')).to be_present
+    within('form') do
+      fill_in 'group_name', with: 'My new group'
+    end
+    find('#group_icon').set(Rails.root.join('spec/support/candy.png'))
+    click_button 'Create'
+    expect(page).to have_content('A new group has been added!!')
+  end
 end
