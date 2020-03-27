@@ -98,6 +98,9 @@ $color-black: #000;
   width: 100%;
   letter-spacing: 1px;
   @include center();
+  transition: all .4s;
+  animation: moveDown 1s ease-in;
+  // animation: moveInBottom 1s ease-out;
 }
 
 // LOG IN
@@ -372,6 +375,7 @@ $color-black: #000;
 .purchase {
   height: 100vh;
   background-color: $color-white-1;
+  position: relative;
 
   &__total {
     display: flex;
@@ -484,6 +488,20 @@ $color-black: #000;
     color: $color-white-1;
     background-color: $color-primary;
     outline: none;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
   }
 }
 
@@ -509,6 +527,36 @@ $color-black: #000;
   }
 }
 
+// ANIMATIONS
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  80% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+// @keyframes moveInBottom {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(1rem);
+//   }
+
+//   100% {
+//     opacity: 1;
+//     transform: translate(0);
+//   }
+// }
 
 // NOTIFICATIONS
 

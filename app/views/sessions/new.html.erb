@@ -1,12 +1,5 @@
 <div class="login">
-  <div class="login__header">
-    <%= link_to root_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h2>Login</h2>
-    <span>Log in</span>
-  </div>
-
+  <%= render 'shared/header_form', title: 'Login', path: root_path %>
   <%= render 'shared/messages' %>
 
   <div class="form">
