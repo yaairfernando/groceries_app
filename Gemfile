@@ -32,7 +32,6 @@ gem 'hirb'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-gem 'simple-line-icons-rails'
 gem "mini_magick"
 gem 'carrierwave', '~> 2.1'
 gem 'cloudinary'
@@ -40,6 +39,8 @@ gem 'cloudinary'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'database_cleaner'
+  gem 'rspec-rails', '~> 4.0.0.beta3'
 end
 
 group :development do
