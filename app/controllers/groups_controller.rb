@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = current_user.groups.build(group_params)
+    byebug
     @value = Cloudinary::Uploader.upload(params[:group][:icon])
     @group.icon = @value['url']
     if @group.save
