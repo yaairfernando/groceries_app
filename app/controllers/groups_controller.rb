@@ -12,10 +12,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = current_user.groups.build(group_params)
-    byebug
-    @value = Cloudinary::Uploader.upload(params[:group][:icon])
-    @group.icon = @value['url']
     if @group.save
+      @value = Cloudinary::Uploader.upload(params[:group][:icon])
+      update_icon_url @value
       flash[:success] = 'A new group has been added!!'
       redirect_to groups_path
     else

@@ -35,7 +35,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem "mini_magick"
 gem 'carrierwave', '~> 2.1'
 
-group :production, :development do
+group :production, :development, :test do
   gem 'cloudinary'
 end
 
