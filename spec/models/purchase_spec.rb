@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Purchase', type: :model do
@@ -65,5 +67,4 @@ RSpec.describe 'Purchase', type: :model do
     purchase.save
     expect(purchase.group).to eq(group)
   end
-  
 end

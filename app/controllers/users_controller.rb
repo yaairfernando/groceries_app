@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :find_user, only: %i[show]
   before_action :user_params, only: %i[create]
 
   def new
-    redirect_to root_path unless !logged_in?
+    redirect_to root_path if logged_in?
     @user = User.new
   end
 
@@ -18,8 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def external_transactions
     @transactions = current_user.purchases.includes(:group, :creator).where(group_id: [nil, '']).order('name ASC')

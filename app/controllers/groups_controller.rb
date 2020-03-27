@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   include GroupsHelper
   before_action :find_group, only: %i[show]

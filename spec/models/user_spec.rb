@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "User", type: :model do
-  let(:user) { build(:user)}
+RSpec.describe 'User', type: :model do
+  let(:user) { build(:user) }
 
   after(:each) do
     User.destroy_all

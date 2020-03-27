@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Group', type: :model do
-  let(:group) { build(:group)}
-  let(:user) { create(:user)}
+  let(:group) { build(:group) }
+  let(:user) { create(:user) }
 
   after(:each) do
     Group.destroy_all
@@ -59,5 +61,4 @@ RSpec.describe 'Group', type: :model do
     group.save
     expect(group.purchases).to eq([])
   end
-  
 end

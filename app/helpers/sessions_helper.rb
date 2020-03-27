@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SessionsHelper
   def logged_in?
     !current_user.nil?
@@ -10,7 +12,7 @@ module SessionsHelper
     @current_user
   end
 
-  def log_in user
+  def log_in(user)
     session[:user_id] = user.id
   end
 
