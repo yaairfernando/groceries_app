@@ -3,7 +3,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield2]][linkedin-url2]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 [![Hireable][hireable]][hireable-url]
 
 <!-- PROJECT LOGO -->
@@ -144,6 +143,12 @@ Open your browser on [http://localhost:3000](http://localhost:3000)
 <p align="center">
 
   Project Link: [https://github.com/YairFernando67/groceries_app](https://github.com/YairFernando67/groceries_app)
+
+</p>
+
+<p align="center">
+
+  Live Version: [https://protected-scrubland-84489.herokuapp.com/](https://protected-scrubland-84489.herokuapp.com/)
 
 </p>
 
