@@ -9,7 +9,7 @@
     </span>
   </div>
   <div class="purchase__container">
-    <%= render @group.purchases, author: true %>
+    <%= render @purchases, author: true %>
   </div>
   <div class="purchase__button-container">
     <%= link_to 'Register new Purchase', new_purchase_path, class: 'button btn-green purchase__create' %>
