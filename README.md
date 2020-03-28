@@ -39,12 +39,12 @@
 
 ## About The Project
 
-![Screenshot Image](app/assets/images/img1.png) 
-![Screenshot Image](app/assets/images/img2.png) 
-![Screenshot Image](app/assets/images/img3.png) 
-![Screenshot Image](app/assets/images/img4.png) 
-![Screenshot Image](app/assets/images/img5.png) 
-![Screenshot Image](app/assets/images/img6.png) 
+![Screenshot Image](app/assets/images/image1.png) 
+![Screenshot Image](app/assets/images/image2.png) 
+![Screenshot Image](app/assets/images/image3.png) 
+![Screenshot Image](app/assets/images/image4.png) 
+![Screenshot Image](app/assets/images/image5.png) 
+![Screenshot Image](app/assets/images/image6.png) 
 
 ### Built With
 The project was developed using the following technologies:
