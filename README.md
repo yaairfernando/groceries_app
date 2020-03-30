@@ -148,7 +148,7 @@ Open your browser on [http://localhost:3000](http://localhost:3000)
 
 <p align="center">
 
-  Live Version: [https://protected-scrubland-84489.herokuapp.com/](https://protected-scrubland-84489.herokuapp.com/)
+  Live Version: [https://groceries-man-app.herokuapp.com/](https://groceries-man-app.herokuapp.com/)
 
 </p>
 
