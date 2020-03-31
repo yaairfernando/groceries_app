@@ -16,15 +16,6 @@ RSpec.describe PurchasesController, type: :controller do
     end
   end
 
-  describe 'GET Show' do
-    it 'should render the show template' do
-      purchase = create(:purchase, author_id: @user.id, group_id: @group.id)
-      get :show, params: { id: purchase.id }
-      expect(response.status).to eq(200)
-      expect(response).to render_template :show
-    end
-  end
-
   describe 'GET New' do
     it 'should render the new template' do
       get :new

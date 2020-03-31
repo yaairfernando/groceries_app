@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
 
   resources :groups, only: %i[new create show index]
-  resources :purchases, only: %i[new create show index]
+  resources :purchases, only: %i[new create index]
   resources :users, only: %i[show create]
 
   get 'external_transactions', to: 'users#external_transactions'

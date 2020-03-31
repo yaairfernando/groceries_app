@@ -14,10 +14,10 @@ feature 'Purchases' do
   end
 
   scenario 'Create a new transaction' do
-    click_link 'All groups'
+    click_link 'groups'
     create_group
     first('.menu__icon > a').click
-    click_link 'All my transactions'
+    click_link 'transactions'
     click_link 'Register new Purchase'
     expect(find('form')).to be_present
     within('form') do
@@ -43,10 +43,10 @@ feature 'Purchases' do
   end
 
   scenario 'Create a new purchase without adding a group' do
-    click_link 'All groups'
+    click_link 'groups'
     create_group
     first('.menu__icon > a').click
-    click_link 'All my transactions'
+    click_link 'transactions'
     click_link 'Register new Purchase'
     expect(find('form')).to be_present
     within('form') do
@@ -70,12 +70,12 @@ feature 'Purchases' do
   end
 
   scenario 'Visit index' do
-    click_link 'All my transactions'
+    click_link 'transactions'
     expect(page).to have_content('Transactions')
   end
 
   scenario 'Renders the new template again' do
-    click_link 'All my transactions'
+    click_link 'transactions'
     click_link 'Register new Purchase'
     expect(find('form')).to be_present
     within('form') do

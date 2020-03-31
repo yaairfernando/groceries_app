@@ -6,8 +6,6 @@ class PurchasesController < ApplicationController
     @total = current_user.purchases.where.not(group_id: [nil]).sum('amount')
   end
 
-  def show; end
-
   def new
     @purchase = Purchase.new
   end

@@ -11,7 +11,7 @@ feature 'Groups' do
     click_link 'Dashboard'
     li = find_all('li')
     expect(li.count).to eq(3)
-    click_link 'All groups'
+    click_link 'groups'
   end
 
   scenario 'Visit index' do
@@ -32,7 +32,7 @@ feature 'Groups' do
     click_link 'Dashboard'
     li = find_all('li')
     expect(li.count).to eq(3)
-    click_link 'All groups'
+    click_link 'groups'
   end
 
   scenario 'Do not create a new group with invalid name' do
@@ -57,7 +57,7 @@ feature 'Groups' do
     click_link 'Dashboard'
     li = find_all('li')
     expect(li.count).to eq(3)
-    click_link 'All groups'
+    click_link 'groups'
   end
 
   scenario 'Do not create a new group with invalid icon' do
@@ -81,7 +81,7 @@ feature 'Groups Transactions' do
     click_link 'Dashboard'
     li = find_all('li')
     expect(li.count).to eq(3)
-    click_link 'All groups'
+    click_link 'groups'
   end
 
   scenario 'Visit group transactions' do
