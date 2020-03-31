@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'mixins';
 
-@media (min-width: 425px) {
+@media screen and (min-width: 600px) {
   body {
     padding: 2rem;
     background-color: $color-blue-dark;
@@ -118,7 +118,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .home {
     box-shadow: 0 1rem 4rem rgba(255,255,255,0.4);
     width: 90rem;
@@ -133,7 +133,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .home {
     clip-path: none;
     --webkit-clip-path: none;
