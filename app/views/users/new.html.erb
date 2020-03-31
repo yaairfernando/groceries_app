@@ -1,6 +1,7 @@
 <%= javascript_pack_tag 'script' %>
 <div class="login">
   <%= render 'shared/header_form', title: 'Sign Up', path: root_path %>
+  <%= render 'shared/header_desktop' %>
   <div class="form">
     <%= simple_form_for @user, validate: false, html: { multipart: true }  do |f| %>
       <div class="form__input">

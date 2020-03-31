@@ -5,6 +5,10 @@
   height: 100vh;
   position: relative;
 
+  &__header-desktop {
+    display: none;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
