@@ -32,6 +32,7 @@ module Integration
     find('#group_icon').set(Rails.root.join('spec/support/candy.png'))
     click_button 'Create'
     expect(page).to have_content('A new group has been added!!')
+    expect(find('.group__image img')).to be_present
   end
 
   def create_transaction

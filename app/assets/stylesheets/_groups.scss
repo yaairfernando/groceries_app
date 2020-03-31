@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixins';
+
+.group {
+  height: 100vh;
+  background-image: linear-gradient(to top, $color-blue-light, $color-blue-dark);
+  position: relative;
+
+  &__container {
+    position: absolute;
+    top: 48.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: calc(100vh - 289px);
+    overflow-y: auto;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin: 5rem;
+    align-items: center;
+
+  }
+
+  &__right {
+    flex: 2;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > span:first-child {
+      font-size: 4.5rem;
+    }
+
+    & > span:last-child {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__image {
+    width: 18rem;
+    flex: 1;
+    margin-left: 10rem;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__button-container {
+    @include position_bottom();
+    background-color: $color-green;
+    height: 16rem;
+  }
+}

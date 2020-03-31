@@ -1,0 +1,46 @@
+@import 'variables';
+
+.success {
+  background-color: $color-green;
+}
+
+.danger {
+  background-color: $color-red;
+}
+
+.notification {
+  text-align: center;
+  padding: 1rem 2rem;
+  color: $color-white-1;
+  width: 50%;
+  margin: 0 auto;
+  height: 6rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__message {
+    font-size: 2rem;
+    margin: 0;
+    line-height: 4rem;
+  }
+
+}
+
+// ERRORS
+
+span.error {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  background-color: $color-red;
+  color: $color-white-1;
+  font-size: 1.5rem;
+  display: block;
+}

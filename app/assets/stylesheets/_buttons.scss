@@ -1,0 +1,68 @@
+@import 'variables';
+
+.button {
+  &,
+  &:link,
+  &:visited {
+    border: none;
+    margin: 0 auto;
+    border-radius: 3px;
+    height: 12rem;
+    line-height: 12rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    display: block;
+    width: 90%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.btn-blue {
+  &,
+  &:link,
+  &:visited {
+    color: $color-white-1;
+    background-color: $color-primary;
+    outline: none;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+  }
+}
+
+.btn-grey {
+  &,
+  &:link,
+  &:visited {
+    color: $color-grey;
+    outline: none;
+  }
+}
+
+.btn-green {
+  &,
+  &:link,
+  &:visited {
+    background-color: $color-green;
+    color: $color-white-1;
+    bottom: 0;
+    text-align: center;
+    border: 3px solid #fff;
+    outline: none;
+  }
+}

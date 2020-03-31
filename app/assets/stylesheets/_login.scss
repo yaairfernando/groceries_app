@@ -1,0 +1,131 @@
+@import 'variables';
+
+.login {
+  background-color:  $color-white-1;
+  height: 100vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    background: $color-primary;
+    height: 12rem;
+    font-size: 3rem;
+    color: $color-white-1;
+    margin-bottom: 7rem;
+
+    
+    & > a {
+      &,
+      &:link,
+      &:active {
+        font-size: 7rem;
+        width: 25%;
+        color: $color-white-1;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+    }
+    
+    & > h2 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+    }
+    
+    & > span {
+      font-size: 3rem;
+      text-transform: capitalize;
+      width: 25%;
+      text-align: end;
+    }
+  }
+
+  .form {
+    height: calc(100vh - 190px);
+    position: relative;
+
+    & > form {
+      height: inherit;
+      position: inherit;
+    }
+
+    &__input {
+      &--field,
+      &--number {
+        &,
+        &:focus {
+          display: block;
+          width: 100%;
+          height: 10rem;
+          font-size: 3rem;
+          padding: 3rem;
+          border: none;
+          outline: none;
+          font-weight: 700;
+          color: $color-grey-3;
+          margin-bottom: 2rem;
+        }
+
+        &::-webkit-input-placeholder {
+          color: $color-grey-2;
+        }
+      }
+
+    }
+
+    &__input__file {
+      display: block;
+      width: 100%;
+      height: 10rem;
+      font-size: 3rem;
+      padding: 3rem;
+      border: none;
+      outline: none;
+      font-weight: 100;
+      color: $color-grey-3;
+    }
+
+    &__input__select {
+
+      .select {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        & > label {
+          display: flex;
+          flex-direction: initial;
+          font-size: 3rem;
+          color: $color-grey-3;
+          padding: 0 2rem;
+        }
+
+        & > select {
+          &,
+          &:focus,
+          &:active {
+            border: none;
+            outline: none;
+            padding: 3rem 3rem;
+            background: $color-white;
+            color: $color-grey-3;
+            font-size: 3rem;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+
+    &__input:last-child {
+      position: absolute;
+      bottom: 2rem;
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixins';
+
+.dashboard {
+  height: 100vh;
+  background-image: linear-gradient(to top, $color-blue-light, $color-blue-dark);
+  position: relative;
+
+  &__picture {
+    margin: 0 auto;
+    text-align: center;
+    padding: 6rem;
+    height: auto;
+
+    & > img {
+      border-radius: 100px;
+      margin-bottom: 1rem;
+      width: 20rem;
+      border: 2px solid $color-white;
+    }
+
+    & > h2 {
+      text-transform: capitalize;
+      color: $color-white;
+      font-size: 4rem;
+      margin-top: 1rem;
+    }
+  }
+
+  &__menu {
+    margin: 0 auto;
+    text-align: justify;
+    padding: 2rem 3rem;
+    height: auto;
+
+    &__item {
+      list-style: none;
+      padding: 1rem 0;
+      margin: 0 auto;
+      display: block;
+      width: 70rem;
+      margin-bottom: 7rem;
+
+      & > a {
+        &,
+        &:link,
+        &:visited {
+          color: $color-white;
+          text-decoration: none;
+          font-size: 4.4rem;
+          display: flex;
+          align-items: center;
+          outline: none;
+        }
+
+        .circle {
+          border-radius: 50%;
+          height: 15rem;
+          width: 20%;
+          position: relative;
+          display: inline-block;
+          border: 2px solid $color-white;
+
+          & > img {
+            margin: 0 auto;
+            text-align: center;
+            @include center();
+            font-size: 5.7rem;
+          }
+        }
+
+        .link {
+          border-bottom: 1px solid $color-white;
+          padding: 3.6rem 0;
+          margin-left: 3rem;
+          width: 85%;
+        }
+      } 
+    }
+  }
+
+  &__button-container {
+    position: absolute;
+    bottom: 2rem;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+
+    & > a {
+      text-align: center;
+      border: 3px solid $color-white !important;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+.home {
+  background-color: $color-white-1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__title {
+    flex: 90%;
+    position: relative;
+  }
+
+  &__actions {
+    flex: 10%;
+    padding: 2rem;
+  }
+}
+
+.prim-title {
+  text-transform: uppercase;
+  font-family: 'Courgette', cursive;
+  font-size: 8rem;
+  display: inline-block;
+  width: 100%;
+  letter-spacing: 1px;
+  @include center();
+}
