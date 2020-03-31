@@ -66,6 +66,7 @@
       padding: 10rem 0;
       
       &__input--field {
+
         display: block;
         width: 90%;
         height: 10rem;
@@ -78,6 +79,12 @@
         color: #878A8F;
         margin: 0 auto;
         background: white;
+        
+        &:focus{
+          border: 2px solid $color-blue-dark;
+          width: 90%;
+          box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+        }
       }
 
       &__input:last-child() {
