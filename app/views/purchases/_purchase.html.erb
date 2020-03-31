@@ -1,7 +1,7 @@
 <div class="purchase__detail">
   <div class="purchase__right">
     <span>
-      <%= purchase.name %>
+      <%= purchase.name.upcase %>
     </span>
     <span>
       <%= purchase.creator.name.titleize if local_assigns[:author] %>

@@ -1,6 +1,7 @@
 <%= javascript_pack_tag 'script' %>
 <div class="login">
   <%= render 'shared/header_form', title: 'Transaction', path: purchases_path %>
+  <%= render 'shared/messages'%>
   <div class="form">
     <%= simple_form_for @purchase do |f| %>
       <div class="form__input">

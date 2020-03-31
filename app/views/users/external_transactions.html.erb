@@ -1,5 +1,5 @@
 <div class="purchase">
-  <%= render 'shared/menu', title: 'Transactions' %>
+  <%= render 'shared/menu', title: 'External Transactions' %>
   <div class="purchase__total">
     <span>
       Total Amount:
@@ -13,7 +13,7 @@
       <div class="purchase__detail">
         <div class="purchase__right pl-5 ml-5">
           <span>
-            <%= t.name %>
+            <%= t.name.upcase %>
           </span>
           <span>
             <%= t.created_at.strftime("%Y %B %d") %>

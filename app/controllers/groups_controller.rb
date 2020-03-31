@@ -20,13 +20,14 @@ class GroupsController < ApplicationController
       flash[:success] = 'A new group has been added!!'
       redirect_to groups_path
     else
+      flash.now[:danger] = 'Please fill in all inputs'
       render :new
     end
   end
 
   def show
     @total = @group.purchases.sum('amount')
-    @purchases = @group.purchases.includes(:creator, :group)
+    @purchases = @group.purchases.includes(:creator)
   end
 
   private

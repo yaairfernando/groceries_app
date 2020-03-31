@@ -2,7 +2,7 @@
 
 class PurchasesController < ApplicationController
   def index
-    @purchases = current_user.purchases.includes(:group, :creator).where.not(group_id: [nil]).order('name ASC')
+    @purchases = current_user.purchases.includes(:group).where.not(group_id: [nil]).order('name ASC')
     @total = current_user.purchases.where.not(group_id: [nil]).sum('amount')
   end
 
@@ -20,6 +20,7 @@ class PurchasesController < ApplicationController
       flash[:success] = 'Your transaction has been added!!'
       redirect_to purchases_path
     else
+      flash.now[:danger] = 'Please fill in all inputs'
       render :new
     end
   end

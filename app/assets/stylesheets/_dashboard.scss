@@ -20,7 +20,7 @@
     }
 
     & > h2 {
-      text-transform: capitalize;
+      text-transform: uppercase;
       color: $color-white;
       font-size: 4rem;
       margin-top: 1rem;
@@ -74,6 +74,8 @@
           padding: 3.6rem 0;
           margin-left: 3rem;
           width: 85%;
+          text-transform: uppercase;
+          font-size: 4.2rem;
         }
       } 
     }
