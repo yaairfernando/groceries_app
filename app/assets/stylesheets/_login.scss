@@ -53,7 +53,7 @@
     padding: 1rem 2rem;
     align-items: center;
     background: $color-primary;
-    height: 7rem;
+    height: 6rem;
     font-size: 3rem;
     color: $color-white-1;
 
@@ -88,9 +88,9 @@
   }
 
   .form {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 95px);
     position: relative;
-    padding-top: 5rem;
+    padding-top: 3.5rem;
 
     @include mediaMD {
       position: unset;
@@ -202,7 +202,7 @@
 
     &__input:last-child {
       position: absolute;
-      bottom: 0.5rem;
+      bottom: 0;
       display: block;
       width: 100%;
 
