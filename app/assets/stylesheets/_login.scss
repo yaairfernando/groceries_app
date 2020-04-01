@@ -53,7 +53,7 @@
     padding: 1rem 2rem;
     align-items: center;
     background: $color-primary;
-    height: 6rem;
+    height: 5rem;
     font-size: 3rem;
     color: $color-white-1;
 
@@ -88,7 +88,7 @@
   }
 
   .form {
-    height: calc(100vh - 95px);
+    height: calc(100vh - 85px);
     position: relative;
     padding-top: 3.5rem;
 
@@ -133,7 +133,7 @@
         &:focus {
           display: block;
           width: 100%;
-          height: 6rem;
+          height: 5rem;
           font-size: 1.8rem;
           padding: 1rem 3rem;
           border: none;
