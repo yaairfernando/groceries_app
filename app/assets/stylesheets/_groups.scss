@@ -12,7 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: calc(100vh - 289px);
+    height: calc(100vh - 120px);
     overflow-y: auto;
   }
 
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
-    margin: 5rem;
+    padding: 2rem 3rem;
     align-items: center;
 
   }
@@ -34,18 +34,17 @@
     align-items: center;
 
     & > span:first-child {
-      font-size: 4.5rem;
+      font-size: 1.5rem;
     }
 
     & > span:last-child {
-      font-size: 3.2rem;
+      font-size: 1.1rem;
     }
   }
 
   &__image {
     width: 18rem;
     flex: 1;
-    margin-left: 10rem;
 
     & > img {
       width: 100%;
@@ -55,6 +54,6 @@
   &__button-container {
     @include position_bottom();
     background-color: $color-green;
-    height: 16rem;
+    height: 7rem;
   }
 }

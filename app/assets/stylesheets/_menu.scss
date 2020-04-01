@@ -4,29 +4,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 3rem;
-  height: 12rem;
+  padding: 0rem .8rem;
+  height: 5rem;
   background: $color-blue-light-2;
 
   &__icon {
-    width: 5%;
+    width: 15%;
     margin: 0 auto;
     text-align: center;
 
     & > a {
       color: $color-white;
-      font-size: 7.5rem;
+      width: 100%;
+
+      & > img {
+        width: 80%;
+      }
     } 
   }
 
   &__title {
-    width: 95%;
+    width: 85%;
     text-align: center;
     color: $color-white;
 
     & > h3 {
-      font-size: 5rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
   }
 }

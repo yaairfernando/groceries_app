@@ -9,7 +9,7 @@
   &__picture {
     margin: 0 auto;
     text-align: center;
-    padding: 3rem 6rem 0 6rem;
+    padding: 2rem 6rem 0 6rem;
     height: auto;
 
     & > img {
@@ -35,7 +35,7 @@
 
     &__item {
       list-style: none;
-      padding: 1rem 0;
+      padding-bottom: 1rem;
       margin: 0 auto;
       display: block;
       width: 90%;
@@ -54,8 +54,8 @@
 
         .circle {
           border-radius: 50%;
-          height: 7rem;
-          width: 24%;
+          height: 5rem;
+          width: 20%;
           position: relative;
           display: inline-block;
           border: 2px solid $color-white;
@@ -71,7 +71,7 @@
 
         .link {
           border-bottom: 1px solid #fff;
-          padding: 2.6rem 0;
+          padding: 2rem 0;
           margin-left: 2rem;
           width: 73%;
           text-transform: uppercase;
