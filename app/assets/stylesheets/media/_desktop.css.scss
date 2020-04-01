@@ -1,0 +1,142 @@
+@import 'variables';
+@import 'mixins';
+
+@include mediaMD {
+  body {
+    padding: 2rem;
+    background-color: $color-blue-dark;
+    height: 100vh;
+  }
+
+  html {
+    font-size: 30.5%;
+  }
+
+  .home {
+    height: calc(100vh - 20px);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    --webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+
+    &__actions {
+      position: absolute;
+      top: 77%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .login__header {
+    display: none;
+  }
+
+  .login__header-desktop {
+    display: block;
+    padding: 1rem 0;
+    font-size: 4rem;
+    margin-top: 15rem;
+
+    &-container {
+      margin: 0 auto;
+      width: 75%;
+      text-align: center;
+
+      .home_icon {
+        padding: 4rem 0;
+      }
+
+      & > h2 {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .login {
+    background-color: $color-white;
+    width: 90rem;
+    margin: 0 auto;
+    height: 130rem;
+    @include center();
+    border-radius: 3px;
+    box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.4);
+
+    .form {
+      position: unset;
+      height: auto;
+      padding: 10rem 0;
+      
+      &__input--field {
+
+        display: block;
+        width: 90%;
+        height: 10rem;
+        font-size: 3rem;
+        padding: 3rem;
+        border: 1px solid #96a0aa;
+        border-radius: 3px;
+        outline: none;
+        font-weight: 400;
+        color: #878A8F;
+        margin: 0 auto;
+        background: white;
+        
+        &:focus{
+          border: 2px solid $color-blue-dark;
+          width: 90%;
+          box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+        }
+      }
+
+      &__input:last-child() {
+        position: unset;
+        margin-top: 6rem;
+      }
+    }
+  }
+
+  .notification {
+    width: 90%;
+    height: 10rem;
+    position: unset;
+
+    &__message {
+      font-size: 2.5rem;
+    } 
+
+    &__icon > img {
+      width: 75%;
+    }
+  }
+
+  span.error {
+    font-size: 3rem;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 5rem;
+    margin-top: 1rem;
+  }
+}
+
+@include mediaL {
+  .home {
+    box-shadow: 0 1rem 4rem rgba(255,255,255,0.4);
+    width: 90rem;
+    clip-path: none;
+    height: 150rem;
+    margin: 0 auto;
+    @include center();
+
+    &__actions {
+      top: 90%;
+    }
+  }
+}
+
+@include mediaXL {
+  .home {
+    clip-path: none;
+    --webkit-clip-path: none;
+  }
+}
+

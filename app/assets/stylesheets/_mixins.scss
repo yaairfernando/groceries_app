@@ -12,3 +12,21 @@
   width: 100%;
   padding: 2rem 0;
 }
+
+@mixin mediaMD {
+  @media screen and (min-width: 37.5em) {  // 600px = 600 / 16
+    @content;
+  }
+}
+
+@mixin mediaL {
+  @media screen and (min-width: 48em) {  // 768px = 768 / 16
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (min-width: 64em) {  // 1024 = 1024 / 16
+    @content;
+  }
+}
