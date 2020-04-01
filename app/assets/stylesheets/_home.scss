@@ -8,6 +8,26 @@
   flex-direction: column;
   height: 100vh;
 
+  @include mediaMD {
+    height: calc(100vh - 20px);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    --webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  }
+
+  @include mediaL {
+    box-shadow: 0 1rem 4rem rgba(255,255,255,0.4);
+    width: 90rem;
+    clip-path: none;
+    height: 150rem;
+    margin: 0 auto;
+    @include center();
+  }
+
+  @include mediaXL {
+    clip-path: none;
+    --webkit-clip-path: none;
+  }
+
   &__title {
     flex: 90%;
     position: relative;
@@ -16,6 +36,18 @@
   &__actions {
     flex: 10%;
     padding: 2rem;
+
+    @include mediaMD {
+      position: absolute;
+      top: 77%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include mediaL {
+      top: 90%;
+    }
   }
 }
 
@@ -27,4 +59,8 @@
   width: 100%;
   letter-spacing: 1px;
   @include center();
+
+  @include mediaMD {
+    font-size: 8rem;
+  }
 }

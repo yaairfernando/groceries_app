@@ -1,3 +1,6 @@
+@import 'mixins';
+@import 'variables';
+
 *, 
 *::before,
 *::after {
@@ -8,11 +11,21 @@
 
 html {
   font-size: 62.5%;
+
+  @include mediaMD {
+    font-size: 30.5%;
+  }
 }
 
 body {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+
+  @include mediaMD {
+    padding: 2rem;
+    background-color: $color-blue-dark;
+    height: 100vh;
+  }
 }
 
 a:visited,

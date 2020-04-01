@@ -1,12 +1,50 @@
 @import 'variables';
+@import 'mixins';
 
 .login {
   background-color:  $color-white-1;
   height: 100vh;
   position: relative;
 
+  @include mediaMD {
+    background-color: $color-white;
+    width: 90rem;
+    margin: 0 auto;
+    height: 130rem;
+    @include center();
+    border-radius: 3px;
+    box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.4);
+  }
+
   &__header-desktop {
     display: none;
+
+    @include mediaMD {
+      display: block;
+      padding: 1rem 0;
+      font-size: 4rem;
+      margin-top: 15rem;
+    }
+
+    &-container {
+      @include mediaMD {
+        margin: 0 auto;
+        width: 75%;
+        text-align: center;
+      }
+
+      .home_icon {
+        @include mediaMD {
+          padding: 4rem 0;
+        }
+      }
+
+      & > h2 {
+        @include mediaMD {
+          font-size: 5rem;
+        }
+      }
+    }
   }
 
   &__header {
@@ -15,9 +53,13 @@
     padding: 1rem 2rem;
     align-items: center;
     background: $color-primary;
-    height: 12rem;
+    height: 8rem;
     font-size: 3rem;
     color: $color-white-1;
+
+    @include mediaMD {
+      display: none;
+    }
     
     & > a {
       &,
@@ -29,29 +71,32 @@
         display: flex;
         align-items: center;
         text-decoration: none;
+
+        & > img {
+          width: 65%;
+        }
       }
     }
     
     & > h2 {
-      font-size: 4rem;
+      font-size: 3rem;
       text-transform: uppercase;
       margin: 0 auto;
-      text-align: center;
-      width: 50%;
-    }
-    
-    & > span {
-      font-size: 3rem;
-      text-transform: capitalize;
-      width: 25%;
-      text-align: end;
+      text-align: right;
+      width: 75%;
     }
   }
 
   .form {
-    height: calc(100vh - 190px);
+    height: calc(100vh - 130px);
     position: relative;
-    padding-top: 7rem;
+    padding-top: 5rem;
+
+    @include mediaMD {
+      position: unset;
+      height: auto;
+      padding: 10rem 0;
+    }
 
     & > form {
       height: inherit;
@@ -63,19 +108,46 @@
     }
 
     &__input {
+      &--field {
+        @include mediaMD {
+          display: block !important;
+          width: 90% !important;
+          height: 10rem !important;
+          font-size: 3rem !important;
+          padding: 3rem !important;
+          border: 1px solid #96a0aa !important;
+          border-radius: 3px !important;
+          outline: none !important;
+          font-weight: 400 !important;
+          color: #878A8F !important;
+          margin: 0 auto !important;
+          background: $color-white !important;
+        }
+      }
+    }
+
+    &__input {
       &--field,
       &--number {
         &,
         &:focus {
           display: block;
           width: 100%;
-          height: 10rem;
-          font-size: 3rem;
-          padding: 3rem;
+          height: 7rem;
+          font-size: 2rem;
+          padding: 1rem 3rem;
           border: none;
           outline: none;
           font-weight: 700;
           color: $color-grey-3;
+        }
+
+        &:focus {
+          @include mediaMD {
+            border: 2px solid $color-blue-dark !important;
+            width: 90% !important;
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.2) !important;
+          }
         }
 
         &::-webkit-input-placeholder {
@@ -133,6 +205,11 @@
       bottom: 2rem;
       display: block;
       width: 100%;
+
+      @include mediaMD {
+        position: unset;
+        margin-top: 6rem;
+      }
     }
   }
 }

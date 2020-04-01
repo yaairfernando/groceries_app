@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .success {
   background-color: $color-green;
@@ -24,15 +25,32 @@
   text-transform: uppercase;
   font-weight: 600;
 
+  @include mediaMD {
+    width: 90%;
+    height: 10rem;
+    position: unset;
+  }
+
   &__icon {
     font-size: 2rem;
     margin-right: 1rem;
+
+    & > img {
+      width: 75%;
+      @include mediaMD {
+        width: 75%;
+      }
+    }
   }
 
   &__message {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin: 0;
     line-height: 4rem;
+
+    @include mediaMD {
+      font-size: 2.5rem;
+    }
   }
 
 }
@@ -46,4 +64,13 @@ span.error {
   color: $color-white-1;
   font-size: 1.5rem;
   display: block;
+
+  @include mediaMD {
+    font-size: 3rem;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 5rem;
+    margin-top: 1rem;
+  }
 }
