@@ -6,6 +6,10 @@
   background-image: linear-gradient(to top, $color-blue-light, $color-blue-dark);
   position: relative;
 
+  @include mediaMD {
+    display: none;
+  }
+
   &__picture {
     margin: 0 auto;
     text-align: center;
@@ -91,6 +95,146 @@
     & > a {
       text-align: center;
       border: 2px solid $color-white !important;
+    }
+  }
+}
+
+.navegation-desktop {
+  display: none;
+  height: calc(100vh - 20px);
+
+  @include mediaMD {
+    display: block;
+  }
+
+  &__menu {
+    @include mediaMD {
+      display: flex;
+      background: #011a31;
+      margin: 0 auto;
+      margin-top: 2rem;
+      height: 15rem;
+    }
+
+    & > ul {
+
+      @include mediaMD {
+        margin: 0;
+        width: 90%;
+        display: flex;
+        align-items: center;
+      }
+
+      & > li {
+
+        @include mediaMD {
+          display: inline-block;
+          padding: 1rem 2rem;
+          transition: all 0.3s;
+          // margin-top: 2rem;
+
+          &::after {
+            content: '';
+            display: block;
+            transform: scale(0);
+            border-bottom: 1px solid $color-white;
+            transition: all .2s ease-in-out;
+            // margin-top: 2rem;
+          }
+
+          &:hover::after {
+            transform: scale(1);
+          }
+        }
+
+        & > a {
+
+          @include mediaMD {
+            text-align: center;
+            font-size: 4rem;
+            color: $color-white;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    
+    &__button {
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .log_out {
+        @include mediaMD {
+          padding: 2rem 5rem;
+          border: 1px solid transparent;
+          text-align: center;
+          transition: all .3s ease-in-out;
+          
+          &:hover {
+            text-decoration: none;
+            border-radius: 3px;
+            border: 1px solid $color-white;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+          }
+        }
+
+        & > a {
+          font-size: 4rem;
+          color: #fff;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        }
+      }
+
+      & > a {
+
+        @include mediaMD {
+          color: $color-white;
+          font-size: 4rem;
+          line-height: 7rem;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+    }
+  }
+
+  .cover_background {
+    @include center();
+    display: flex;
+    flex-direction: column;
+
+    & > img {
+      width: 40rem;
+    }
+
+    & > a {
+      text-align: center;
+      font-size: 2.8rem;
+      border: 2px solid;
+      color: $color-white;
+      margin-top: 21rem;
+      width: 40rem;
+      transition: all 0.3s ease-in;
+      box-shadow: 0 0rem 1rem rgba(255,255,255,0.5);
+
+
+      &:hover {
+        border: 2px solid $color-white;
+        box-shadow: 0 0rem 1.5rem rgba(255,255,255,0.6);
+        background-color: $color-white;
+        color: #011a31;
+        transition: all 0.3s ease-in;
+      }
     }
   }
 }
