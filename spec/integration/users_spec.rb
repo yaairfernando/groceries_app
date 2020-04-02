@@ -33,7 +33,7 @@ feature 'User' do
       end
       click_button 'Sign Up'
       click_link 'Dashboard'
-      click_link 'Sign Out'
+      first(:link, 'Sign Out').click
       visit login_path
     end
 
@@ -56,7 +56,7 @@ feature 'User' do
       end
       click_button 'Sign Up'
       click_link 'Dashboard'
-      click_link 'Sign Out'
+      first(:link, 'Sign Out').click
       visit login_path
     end
 

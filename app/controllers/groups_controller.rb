@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   before_action :find_group, only: %i[show]
 
   def index
-    @groups = current_user.groups.order('name ASC')
+    @groups = current_user.groups.order('created_at DESC')
   end
 
   def new

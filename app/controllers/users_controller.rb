@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show; end
 
   def external_transactions
-    @transactions = current_user.purchases.where(group_id: [nil, '']).order('name ASC')
+    @transactions = current_user.purchases.where(group_id: [nil, '']).order('created_at DESC')
     @total = current_user.purchases.where(group_id: [nil, '']).sum('amount')
   end
 

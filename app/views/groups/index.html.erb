@@ -2,6 +2,7 @@
   <%= render 'shared/menu', title: 'Groups' %>
   <%= render 'shared/navigation_desktop' %>
   <%= render 'shared/messages' %>
+  <%= link_to 'Create new Group', new_group_path, class: 'button btn-green purchase__create__desktop' %>
   <div class="group__container">
     <% @groups.each do |g| %>
       <div class="group__detail">

@@ -1,12 +1,15 @@
 <div class="navegation-desktop">
   <div class="navegation-desktop__menu">
     <ul>
-      <li><%= link_to 'Home', current_user %></li>
+      <%= link_to current_user do %>
+        <%= image_tag('home.png') %>
+      <% end %>
       <li><%= link_to 'Transactions', purchases_path %></li>
       <li><%= link_to 'External Transactions', external_transactions_path %></li>
       <li><%= link_to 'Groups', groups_path %></li>
     </ul>
     <div class="navegation-desktop__menu__button">
+      <%= link_to "@#{current_user.name}", current_user %>
       <div class="log_out">
         <%= link_to 'Sign Out', logout_path %>
       </div>

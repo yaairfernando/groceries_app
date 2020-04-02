@@ -1,5 +1,7 @@
 <div class="purchase">
+  <%= render 'shared/navigation_desktop' %>
   <%= render 'shared/header_form', title: @group.name, path: groups_path, margin: 'mb-0' %>
+  <%= link_to 'Register new Purchase', new_purchase_path, class: 'button btn-green purchase__create__desktop' %>
   <div class="purchase__total">
     <span>
       Total Amount:

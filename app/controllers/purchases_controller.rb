@@ -2,7 +2,7 @@
 
 class PurchasesController < ApplicationController
   def index
-    @purchases = current_user.purchases.includes(:group).where.not(group_id: [nil]).order('name ASC')
+    @purchases = current_user.purchases.includes(:group).where.not(group_id: [nil]).order('created_at DESC')
     @total = current_user.purchases.where.not(group_id: [nil]).sum('amount')
   end
 

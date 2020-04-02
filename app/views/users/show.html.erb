@@ -45,5 +45,9 @@
 <%= render 'shared/navigation_desktop' %>
 <div class="cover_background">
   <%= image_tag('group.png') %>
-  <%= link_to 'Create a new purchase', new_purchase_path, class: "button" %>
+  <% if current_user.groups.count > 0 %>
+    <%= link_to 'Create a new purchase', new_purchase_path, class: "button" %>
+  <% else %>
+    <%= link_to 'Create your first Group', new_group_path, class: "button" %>
+  <% end %>
 </div>

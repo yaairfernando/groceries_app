@@ -14,16 +14,18 @@ module Integration
     within('form') do
       fill_in 'Username', with: 'Yair'
     end
-    click_button 'Sign Up'
+    first(:button, 'Sign Up').click
+    # click_button 'Sign Up'
   end
 
   def sign_out
     click_link 'Dashboard'
-    click_link 'Sign Out'
+    # click_link 'Sign Out'
+    first(:link, 'Sign Out').click
   end
 
   def create_group
-    click_link 'Create new Group'
+    first(:link, 'Create new Group').click
     expect(find('form')).to be_present
     expect(find('#group_icon')).to be_present
     within('form') do

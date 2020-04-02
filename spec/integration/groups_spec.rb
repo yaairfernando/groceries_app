@@ -10,7 +10,7 @@ feature 'Groups' do
     log_in
     click_link 'Dashboard'
     li = find_all('li')
-    expect(li.count).to eq(3)
+    expect(li.count > 1).to eq(true)
     click_link 'groups'
   end
 
@@ -31,12 +31,12 @@ feature 'Groups' do
     log_in
     click_link 'Dashboard'
     li = find_all('li')
-    expect(li.count).to eq(3)
+    expect(li.count > 1).to eq(true)
     click_link 'groups'
   end
 
   scenario 'Do not create a new group with invalid name' do
-    click_link 'Create new Group'
+    first(:link, 'Create new Group').click
     expect(find('form')).to be_present
     expect(find('#group_icon')).to be_present
     within('form') do
@@ -56,12 +56,12 @@ feature 'Groups' do
     log_in
     click_link 'Dashboard'
     li = find_all('li')
-    expect(li.count).to eq(3)
+    expect(li.count > 1).to eq(true)
     click_link 'groups'
   end
 
   scenario 'Do not create a new group with invalid icon' do
-    click_link 'Create new Group'
+    first(:link, 'Create new Group').click
     expect(find('form')).to be_present
     expect(find('#group_icon')).to be_present
     within('form') do
@@ -80,7 +80,7 @@ feature 'Groups Transactions' do
     log_in
     click_link 'Dashboard'
     li = find_all('li')
-    expect(li.count).to eq(3)
+    expect(li.count > 1).to eq(true)
     click_link 'groups'
   end
 

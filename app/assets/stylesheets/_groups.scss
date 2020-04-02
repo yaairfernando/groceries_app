@@ -6,6 +6,13 @@
   background-image: linear-gradient(to top, $color-blue-light, $color-blue-dark);
   position: relative;
 
+  @include mediaMD {
+    height: auto;
+    background-image: none;
+    position: unset;
+    margin-top: 20rem;
+  }
+
   &__container {
     position: absolute;
     top: 48.9%;
@@ -14,6 +21,20 @@
     width: 100%;
     height: calc(100vh - 120px);
     overflow-y: auto;
+
+    @include mediaMD {
+      margin: 0 auto;
+      margin-top: 20rem;
+      width: 100rem;
+      position: unset;
+      overflow-y: unset;
+      height: auto;
+      transform: unset;
+    }
+
+    @include mediaL {
+      width: 120rem;
+    }
   }
 
   &__detail {
@@ -22,6 +43,19 @@
     flex-direction: row-reverse;
     padding: 2rem 3rem;
     align-items: center;
+
+    @include mediaMD {
+      border: 2px solid #fff;
+      border-radius: 3px;
+      margin-bottom: 10rem;
+      box-shadow: 0rem 0rem 2rem rgba(255,255,255,0.4);
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0rem 0rem 2.5rem rgba(255,255,255,0.6);
+      }
+    }
 
   }
 
@@ -35,10 +69,18 @@
 
     & > span:first-child {
       font-size: 1.5rem;
+
+      @include mediaMD {
+        font-size: 4.5rem;
+      }
     }
 
     & > span:last-child {
       font-size: 1.1rem;
+
+      @include mediaMD {
+        font-size: 2.5rem;
+      }
     }
   }
 
@@ -55,5 +97,9 @@
     @include position_bottom();
     background-color: $color-green;
     height: 7rem;
+
+    @include mediaMD {
+      display: none;
+    }
   }
 }
