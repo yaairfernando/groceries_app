@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .menu {
   display: flex;
@@ -7,6 +8,10 @@
   padding: 0rem .8rem;
   height: 5rem;
   background: $color-blue-light-2;
+
+  @include mediaMD {
+    display: none;
+  }
 
   &__icon {
     width: 15%;

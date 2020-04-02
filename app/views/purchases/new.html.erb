@@ -1,6 +1,6 @@
 <%= javascript_pack_tag 'script' %>
 <%= render 'shared/navigation_desktop' %>
-<div class="login">
+<div class="login purchase-create-desktop">
   <%= render 'shared/header_form', title: 'Transaction', path: purchases_path %>
   <%= render 'shared/messages'%>
   <div class="form">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="form__input__select">
-        <%= f.input :group_id, :collection => Group.all, :value_method => :id, :label => "Select a Group" %>
+        <%= f.input :group_id, :collection => Group.all, :value_method => :id, :label => "Select a Group", :class => "form__input__select--select" %>
       </div>
 
       <div class="form__input">

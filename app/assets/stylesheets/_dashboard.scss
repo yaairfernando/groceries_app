@@ -101,7 +101,6 @@
 
 .navegation-desktop {
   display: none;
-  height: calc(100vh - 20px);
 
   @include mediaMD {
     display: block;
@@ -114,6 +113,12 @@
       margin: 0 auto;
       margin-top: 2rem;
       height: 15rem;
+      padding: 0 3rem;
+      position: fixed;
+      width: 100%;
+      top: -10px;
+      left: 0;
+      z-index: 100;
     }
 
     & > ul {
@@ -131,7 +136,6 @@
           display: inline-block;
           padding: 1rem 2rem;
           transition: all 0.3s;
-          // margin-top: 2rem;
 
           &::after {
             content: '';
@@ -139,7 +143,6 @@
             transform: scale(0);
             border-bottom: 1px solid $color-white;
             transition: all .2s ease-in-out;
-            // margin-top: 2rem;
           }
 
           &:hover::after {
@@ -151,8 +154,12 @@
 
           @include mediaMD {
             text-align: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: $color-white;
+          }
+
+          @include mediaL {
+            font-size: 4rem;
           }
 
           &:hover {
@@ -163,10 +170,14 @@
     }
     
     &__button {
-      width: 10%;
+      width: 30%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
+
+      @include mediaL {
+        width: 20%;
+      }
       
       .log_out {
         @include mediaMD {
@@ -182,13 +193,19 @@
             transition: all .3s ease-in-out;
             cursor: pointer;
           }
+
+          & > a {
+            font-size: 3.5rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+          }
         }
 
-        & > a {
-          font-size: 4rem;
-          color: #fff;
-          text-decoration: none;
-          transition: all .3s ease-in-out;
+        @include mediaL {
+          & > a {
+            font-size: 4rem;
+          }
         }
       }
 
@@ -208,28 +225,35 @@
     }
   }
 
-  .cover_background {
+}
+
+.cover_background {
+  display: none;
+
+  @include mediaMD {
+    width: auto;
+    padding: 2rem;
     @include center();
     display: flex;
     flex-direction: column;
-
+  
     & > img {
       width: 40rem;
+      margin: 0 auto;
     }
-
+  
     & > a {
       text-align: center;
       font-size: 2.8rem;
-      border: 2px solid;
       color: $color-white;
       margin-top: 21rem;
       width: 40rem;
       transition: all 0.3s ease-in;
       box-shadow: 0 0rem 1rem rgba(255,255,255,0.5);
-
-
+      border: 2px solid $color-white;
+  
+  
       &:hover {
-        border: 2px solid $color-white;
         box-shadow: 0 0rem 1.5rem rgba(255,255,255,0.6);
         background-color: $color-white;
         color: #011a31;

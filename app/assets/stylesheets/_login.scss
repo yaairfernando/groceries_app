@@ -1,6 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+.login.purchase-create-desktop,
+.login.group-create-desktop {
+  @include mediaMD {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
 .login {
   background-color:  $color-white-1;
   height: 100vh;
@@ -107,15 +115,16 @@
       margin-bottom: 2rem;
     }
 
-    &__input {
-      &--field {
+    &__input--field,
+    &__input--number,
+    &__input__select select {
         @include mediaMD {
           display: block !important;
           width: 90% !important;
           height: 10rem !important;
           font-size: 3rem !important;
           padding: 3rem !important;
-          border: 1px solid #96a0aa !important;
+          border: 2px solid #96a0aa !important;
           border-radius: 3px !important;
           outline: none !important;
           font-weight: 400 !important;
@@ -123,7 +132,6 @@
           margin: 0 auto !important;
           background: $color-white !important;
         }
-      }
     }
 
     &__input {
@@ -182,6 +190,13 @@
           font-size: 2rem;
           color: $color-grey-3;
           padding: 0 2rem;
+
+          @include mediaMD {
+            font-size: 3rem;
+            color: $color-white;
+            margin-left: 5rem;
+            padding: 0;
+          }
         }
 
         & > select {

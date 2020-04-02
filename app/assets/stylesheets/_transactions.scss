@@ -6,6 +6,20 @@
   background-color: $color-white-1;
   position: relative;
 
+  @include mediaMD {
+    height: auto;
+    background-color: transparent;
+    position: unset;
+  }
+
+  &__create_desktop {
+    display: none;
+
+    @include mediaMD {
+      display: block;
+    }
+  }
+
   &__total {
     display: flex;
     background: #fff;
@@ -17,8 +31,22 @@
     justify-content: space-between;
     align-items: center;
 
+    @include mediaMD {
+      background-color: transparent;
+      height: auto;
+      font-size: 3.7rem;
+      color: $color-white;
+      margin-top: 5rem;
+      justify-content: center;
+    }
+
     & > span:first-child {
       color: $color-grey-3;
+      
+      @include mediaMD {
+        padding: 1rem;
+        color: $color-white;
+      }
     }
 
     & > span::last-child {
@@ -30,6 +58,12 @@
     padding: 1rem 2rem;
     height: calc(100vh - 160px);
     overflow-y: scroll;
+
+    @include mediaMD {
+      height: auto; 
+      overflow-y: unset;
+      margin-top: 10rem;
+    }
   }
 
   &__detail {
@@ -43,6 +77,18 @@
     flex-direction: row-reverse;
     margin-bottom: 2.5rem;
     box-shadow: 0 1rem 1.6rem rgba($color-black,0.2);
+
+    @include mediaMD {
+      width: 100rem;
+      margin-bottom: 5rem;
+      box-shadow: 0 0rem 3rem rgba(255,255,255,0);
+      padding: 4rem 8rem;
+    }
+
+    @include mediaL {
+      width: 130rem;
+      padding: 5rem 10rem;
+    }
   }
 
   &__right {
@@ -53,15 +99,30 @@
     align-items: flex-end;
     position: relative;
 
+    @include mediaMD {
+      align-items: center;
+    }
+
+
     & > span:first-child {
       font-size: 1.1rem;
       color: $color-grey-4;
+
+      @include mediaMD{
+        font-size: 6rem;
+        color: #011a31;
+      }
     }
 
     & > span:nth-child(2),
     & > span:nth-child(3) {
       font-size: 1rem;
       color: $color-grey-4;
+
+      @include mediaMD {
+        font-size: 3rem;
+        color: $color-blue-dark;
+      }
     }
 
     &__price {
@@ -70,15 +131,29 @@
       top: -1rem;
       right: -3rem;
       color: $color-black;
+
+      @include mediaMD {
+        font-size: 3rem;
+        top: 1rem;
+        right: 0rem;
+      }
+
+      @include mediaL {
+        top: 2rem;
+        right: 2rem;
+      }
     }
   }
 
   &__image {
     flex: 1;
-    // margin: 2rem 3rem;
 
     & > img {
       width: 6rem;
+
+      @include mediaMD {
+        width: 65%;
+      }
     }
   }
 
@@ -86,5 +161,9 @@
     @include position_bottom();
     background-color: $color-green;
     height: 7rem;
+
+    @include mediaMD {
+      display: none;
+    }
   }
 }

@@ -1,6 +1,7 @@
 <div class="navegation-desktop">
   <div class="navegation-desktop__menu">
     <ul>
+      <li><%= link_to 'Home', current_user %></li>
       <li><%= link_to 'Transactions', purchases_path %></li>
       <li><%= link_to 'External Transactions', external_transactions_path %></li>
       <li><%= link_to 'Groups', groups_path %></li>
@@ -10,10 +11,5 @@
         <%= link_to 'Sign Out', logout_path %>
       </div>
     </div>
-  </div>
-  
-  <div class="cover_background">
-    <%= image_tag('group.png') %>
-    <%= link_to 'Create a new purchase', new_purchase_path, class: "button" %>
   </div>
 </div>

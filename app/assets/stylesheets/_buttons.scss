@@ -14,12 +14,15 @@
     text-transform: uppercase;
     display: block;
     width: 90%;
+    border: 2px solid transparent;
 
     @include mediaMD {
       height: 10rem;
       line-height: 10rem;
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      margin-top: 1rem;
+      width: 80rem;
     }
   }
 
@@ -72,5 +75,9 @@
     text-align: center;
     border: 2px solid #fff;
     outline: none;
+
+    @include mediaMD {
+      margin-top: 20rem;
+    }
   }
 }

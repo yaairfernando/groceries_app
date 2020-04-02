@@ -25,11 +25,13 @@
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
-
+  
   @include mediaMD {
+    width: 100rem;
     width: 90%;
     height: 10rem;
     position: unset;
+    border-radius: 3px;
   }
 
   &__icon {
