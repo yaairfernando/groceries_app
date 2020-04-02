@@ -11,6 +11,9 @@
       $ <%= @total %>.00
     </span>
   </div>
+  <% if @purchases.count == 0 && current_user.groups.count == 0 %>
+    <h3 class="purchase__start">Start making transactions by creating a group <%= link_to 'here', new_group_path %></h3>
+  <% end %>
   <%= render 'shared/messages' %>
   <div class="purchase__container">
     <%= render @purchases %>

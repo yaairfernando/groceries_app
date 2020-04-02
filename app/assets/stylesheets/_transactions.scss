@@ -55,6 +55,17 @@
     }
   }
 
+  &__start {
+
+    @include mediaMD {
+      text-align: center;
+      margin-top: 10rem;
+      color: #fff;
+      font-size: 5rem;
+      @include center();
+    }
+  }
+
   &__container {
     padding: 1rem 2rem;
     height: calc(100vh - 160px);
