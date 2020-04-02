@@ -1,6 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+.btn-green.purchase__create__desktop {
+  display: none;
+
+  @include mediaMD {
+    display: block;
+  }
+}
+
 .purchase {
   height: 100vh;
   background-color: $color-white-1;
@@ -12,13 +20,6 @@
     position: unset;
   }
 
-  &__create_desktop {
-    display: none;
-
-    @include mediaMD {
-      display: block;
-    }
-  }
 
   &__total {
     display: flex;
