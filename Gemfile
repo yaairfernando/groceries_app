@@ -37,6 +37,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'mini_magick'
 gem 'simple_form'
 
+gem 'sassc', '~> 2.1.0'
+
 group :production, :development, :test do
   gem 'cloudinary'
 end
